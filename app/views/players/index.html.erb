@@ -6,5 +6,12 @@
     <li>age: <%= item.age %> </li>
     <li>e-mail: <%= item.email %> </li> 
 </ul>
+
 <% end %>
+
+<% @parks.each do |park_item| %>
+    <p> Player's Name: <%= park_item.name %></p>
+<% end %>
+
+
   

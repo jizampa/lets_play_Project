@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Player.destroy_all
+Park.destroy_all
+
 i = 0
 while i < 100
     new_player = Player.create( :name => Faker::FunnyName.name,
@@ -14,3 +17,17 @@ while i < 100
                    :phone => Faker::PhoneNumber.cell_phone)
     i += 1
     end
+
+json = File.read('/vagrant/rails/lets_play_Project/storage/tennis.json')
+dieson = JSON.parse(json)
+    
+i_parks = 0
+# dieson.each do |park|
+#     new_park = Park.create( :name => park[i_parks]["park_name"])
+#     i_parks += 1
+# end
+
+60.times do
+    new_park = Park.create( :name => dieson[i_parks]["park_name"])
+    i_parks += 1
+end

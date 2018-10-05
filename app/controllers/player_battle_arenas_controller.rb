@@ -1,0 +1,2 @@
+class PlayerBattleArenasController < ApplicationController
+end

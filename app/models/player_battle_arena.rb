@@ -1,2 +1,0 @@
-class PlayerBattleArena < ApplicationRecord
-end

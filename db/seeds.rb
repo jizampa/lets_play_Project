@@ -8,6 +8,7 @@
 
 Player.destroy_all
 Park.destroy_all
+Arena.destroy_all
 
 json = File.read('/vagrant/rails/lets_play_Project/storage/tennis.json')
 dieson = JSON.parse(json)
@@ -27,3 +28,15 @@ while i < 100
     i += 1
     end
 
+    players = Player.all
+    
+    3.times do 
+        players.each do |item|
+        playerId = item.id
+        parkId = Park.all.sample.id
+       
+        Arena.create(player_id: playerId,
+            park_id: parkId)
+            
+      end
+    end

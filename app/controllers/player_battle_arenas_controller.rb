@@ -1,2 +1,0 @@
-class PlayerBattleArenasController < ApplicationController
-end

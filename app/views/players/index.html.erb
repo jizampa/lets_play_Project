@@ -1,4 +1,11 @@
 <h1>Players</h1>
+
+<%= form_tag(players_path, method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <p>These are the players that are register in our database.</p>
 <p>You can find their contact and the areas that are more convinient for them to play.</p>
 <p>Please contact them via e-mail to check their availability to play.</p>
@@ -12,3 +19,7 @@
     </ul>
 <% end %>
 <%= will_paginate @arena %>
+
+TEST
+
+<%= @players_searched.ids %>

@@ -1,4 +1,17 @@
 <h1>Players</h1>
+<p>These are the players that are register in our database.</p>
+<p>You can find their contact and the areas that are more convinient for them to play.</p>
+<p>Please contact them via e-mail to check their availability to play.</p>
+
+
+<% @arena.each do |arena_item| %>
+    <ul>
+    <li>Player's name: <%= arena_item.player.name %> </li>
+    <p>Location: <%= arena_item.park.name %>  </p>
+    <p>e-mail: <%= arena_item.player.email %>  </p>
+    </ul>
+<% end %>
+<%= will_paginate @arena %>
 
 <% @players.each do |item| %>
 <p> Player's Name: <%= item.name %></p>
@@ -8,15 +21,14 @@
 </ul>
 
 <% end %>
+<%= will_paginate @players %>
 
 <% @parks.each do |park_item| %>
     <p> Player's Name: <%= park_item.id %></p>
 <% end %>
 
 
-<% @arena.each do |arena_item| %>
-    <p> Arena Name: <%= arena_item.player.name %> -------- <%= arena_item.park.name  %></p>
-<% end %>
+
 
 
 

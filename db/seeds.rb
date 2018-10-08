@@ -15,28 +15,32 @@ dieson = JSON.parse(json)
     
 i_parks = 0
 60.times do
-    new_park = Park.create( :name => dieson[i_parks]["park_name"])
+    new_park = Park.new( :name => dieson[i_parks]["park_name"])
     i_parks += 1
+    new_park.save!
 end
 
 i = 0
 while i < 100
-    new_player = Player.create( :name => Faker::FunnyName.name,
+    new_player = Player.new( :name => Faker::FunnyName.name,
                    :age => Faker::Number.between(10, 70),
                    :email => Faker::SiliconValley.email,
                    :phone => Faker::PhoneNumber.cell_phone)
+    new_player.save!
     i += 1
-    end
-
-    players = Player.all
     
-    3.times do 
-        players.each do |item|
-        playerId = item.id
-        parkId = Park.all.sample.id
-       
-        Arena.create(player_id: playerId,
-            park_id: parkId)
-            
-      end
+end
+
+players = Player.all
+    
+3.times do 
+    players.each do |item|
+    playerId = item.id
+    parkId = Park.all.sample.id
+    
+    arena_new = Arena.new(:player_id => playerId,
+        :park_id => parkId)
+    arena_new.save!
+        
     end
+end

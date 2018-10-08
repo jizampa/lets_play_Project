@@ -3,5 +3,6 @@ class PlayersController < ApplicationController
  
         @players = Player.all
         @parks = Park.all
+        @arena = Arena.all
   end
 end

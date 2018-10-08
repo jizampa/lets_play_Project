@@ -12,27 +12,3 @@
     </ul>
 <% end %>
 <%= will_paginate @arena %>
-
-<% @players.each do |item| %>
-<p> Player's Name: <%= item.name %></p>
-<ul>
-    <li>age: <%= item.age %> </li>
-    <li>e-mail: <%= item.email %> </li> 
-</ul>
-
-<% end %>
-<%= will_paginate @players %>
-
-<% @parks.each do |park_item| %>
-    <p> Player's Name: <%= park_item.id %></p>
-<% end %>
-
-
-
-
-
-
-<img src='/../../../storage/erd_letsplay.PNG' alt="Smiley face" height="42" width="42">
-
-
-  

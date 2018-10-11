@@ -1,5 +1,6 @@
 <h1>Players</h1>
 
+<%= render "shared/nav" %>
 <%= form_tag(players_path, method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>

@@ -11,15 +11,21 @@
 <p>Please contact them via e-mail to check their availability to play.</p>
 
 
-<% @arena.each do |arena_item| %>
-    <ul>
-    <li>Player's name: <%= arena_item.player.name %> </li>
-    <p>Location: <%= arena_item.park.name %>  </p>
-    <p>e-mail: <%= arena_item.player.email %>  </p>
-    </ul>
+<%# <% @arena.each do |arena_item| %> 
+    <%# <ul> %>
+    <%# <li>Player's name: <%= arena_item.player.name %> </li> 
+    <%# <p>Location: <%= arena_item.park.name %>  </p> 
+    <%# <p>e-mail: <%= arena_item.player.email %>  </p> 
+    <%# </ul> %>
+<%# <% end %> 
+<%# <%= will_paginate @arena %> 
+
+<% @players_searched.each do |item| %>
+  <p>Player's name: <%= item.name %></p>
+  <ul>
+  <% item.parks.each do |itemP| %>
+    <li><%= itemP.name %></li>
+  <% end %>
+</ul>  
 <% end %>
 <%= will_paginate @arena %>
-
-TEST
-
-<%= @players_searched.ids %>

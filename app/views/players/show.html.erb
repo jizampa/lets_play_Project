@@ -1,0 +1,10 @@
+<h1><%= @players_searched.name%></h1>
+<%= render "shared/nav" %>
+<p>name: <%= @players_searched.name%></p>
+<p>e-mail: <%= @players_searched.email%></p>
+<p>phone: <%= @players_searched.phone%></p>
+
+<h2>This player plays on</h2>
+<% @players_searched.parks.each do |itemP| %>
+    <li><%= itemP.name %></li>
+  <% end %>

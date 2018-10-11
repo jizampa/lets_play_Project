@@ -10,8 +10,8 @@ class PlayersController < ApplicationController
   end
 
   def show
-    @players_searched = Player.where("name = ?", params[:name])
+     @players_searched = Player.find(params[:id])
   end
-  
+
 
 end

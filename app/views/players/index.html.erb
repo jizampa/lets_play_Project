@@ -1,7 +1,7 @@
 <h1>Players</h1>
 
 <%= render "shared/nav" %>
-<%= form_tag(players_path, method: "get") do %>
+<%= form_tag("/players", method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>
@@ -22,7 +22,7 @@
 <%# <%= will_paginate @arena %> 
 
 <% @players_searched.each do |item| %>
-  <p>Player's name: <%= item.name %></p>
+  <p>Player's name: <%= link_to item.name, item %></p>
   <ul>
   <% item.parks.each do |itemP| %>
     <li><%= itemP.name %></li>

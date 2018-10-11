@@ -5,6 +5,8 @@
 <p>phone: <%= @players_searched.phone%></p>
 
 <h2>This player plays on</h2>
+<ul>
 <% @players_searched.parks.each do |itemP| %>
     <li><%= itemP.name %></li>
   <% end %>
+  </ul>

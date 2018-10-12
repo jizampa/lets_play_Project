@@ -30,7 +30,11 @@
       </div>
       <% end %>
       </div>
-    <%= will_paginate @arena %>
+      <% if @players_searched.count > 9 %>
+  
+    <%= will_paginate @arena, inner_window: 3, outer_window: 1 %>
+   
+    <% end %>
   
 </div>
 

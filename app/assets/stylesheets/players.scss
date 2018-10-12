@@ -8,20 +8,26 @@
     margin-right: 15px;
 }
 body{
-    background: lightgrey;
+   
+    background-image: url(bluecourt.jpg);
 }
 .container{
     background: white;
     padding-top: 30px;
+    margin-top: 2em;
 }
 .navbar-default{
     background: lightgrey;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
 }
 
-.search{
-    text-align: right;
-}
+
 .justify-content-end{
     margin-top: 10px;
     margin-bottom: 20px;
+}
+
+.container{
+    min-height: 50em;
 }

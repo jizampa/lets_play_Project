@@ -1,22 +1,36 @@
-<h1>Players</h1>
+<div class="container">
+  <h1>Players</h1>
+  
+  <%= render "shared/nav" %>
 
-<%= render "shared/nav" %>
-<%= form_tag("/players", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
+  <div class="row justify-content-end">
+    <div class="col">
+      <%= form_tag("/players", method: "get") do %>
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+    </div>
+  </div>
 
-<p>These are the players that are register in our database.</p>
-<p>You can find their contact and the areas that are more convinient for them to play.</p>
-<p>Please contact them via e-mail to check their availability to play.</p>
+    <p>These are the players that are register in our database.</p>
+    <p>You can find their contact and the areas that are more convinient for them to play.</p>
+    <p>Please contact them via e-mail to check their availability to play.</p>
 
-<% @players_searched.each do |item| %>
-  <p>Player's name: <%= link_to item.name, item %></p>
-  <ul>
-  <% item.parks.each do |itemP| %>
-    <li><%= itemP.name %></li>
-  <% end %>
-</ul>  
-<% end %>
-<%= will_paginate @arena %>
+    <div class="row justify-content-start">
+
+      <% @players_searched.each do |item| %>
+      <div class="col-4">
+        <p>Player's name: <%= link_to item.name, item %></p>
+        <ul>
+          <% item.parks.each do |itemP| %>
+            <li><%= itemP.name %></li>
+          <% end %>
+        </ul>  
+      </div>
+      <% end %>
+      </div>
+    <%= will_paginate @arena %>
+  
+</div>
+
